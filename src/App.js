@@ -9,6 +9,7 @@ import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
 import { LoginCallback, Security, SecureRoute } from "@okta/okta-react";
 import "./App.css";
 import logo from "./logo.svg";
+import Home from "./Home";
 
 const oktaAuth = new OktaAuth({
   issuer: process.env.REACT_APP_ISSUER,
@@ -28,10 +29,7 @@ function App(props) {
 
   return (
     <Router>
-      <Security
-        oktaAuth={oktaAuth}
-        restoreOriginalUri={this.restoreOriginalUri}
-      >
+      <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
         <Route path="/" exact={true} component={Home} />
         <Route path="/login/callback" component={LoginCallback} />
       </Security>
