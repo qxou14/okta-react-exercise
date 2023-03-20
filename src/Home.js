@@ -21,6 +21,7 @@ function Home(props) {
       <div className="Buttons">
         <button onClick={() => logout()}>Logout</button>
         {/* Replace me with your root component. */}
+        hello
       </div>
     );
   } else {
