@@ -22,8 +22,9 @@ const oktaAuth = new OktaAuth({
 function App(props) {
   //after otka succesffuly authenticate it, redirect to original url
   const restoreOriginalUri = async (_oktaAuth, originalUri) => {
-    props.history.replace(
-      toRelativeUrl(originalUri || "/", window.location.origin)
+    window.location.href = toRelativeUrl(
+      originalUri || "/",
+      window.location.origin
     );
   };
 
